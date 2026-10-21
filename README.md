@@ -25,3 +25,33 @@
 5. If publishing is not feasible in time, demonstrate the Flask prototype and clearly describe Tableau publishing as the remaining integration step.
 
 The Flask charts are Plotly charts; they are not embedded Tableau views. To embed Tableau, publish a workbook and replace the placeholder/integration area with Tableau's official embed code or a trusted Tableau embed URL.
+
+## Tableau Dashboard
+
+**Project:** Chronic Disease Risk Analysis
+
+**Tableau Public Dashboard:**   https://public.tableau.com/authoring/ChronicDiseaseRiskAnalysisDashboard/Dashboard1#1
+
+## Project Demo Video
+
+Demo video: Will be added after recording.
+
+## Technologies Used
+
+- Python
+- Flask
+- Pandas
+- Plotly
+- Tableau Public
+- HTML and CSS
+
+## Project Overview
+
+This project explores synthetic patient health data to visualize
+patterns associated with heart disease, diabetes, and stroke.
+
+The dashboard includes disease analysis and comparisons of patient
+health indicators.
+
+**Disclaimer:** The dataset is synthetic and the visualizations
+are for educational purposes only.
