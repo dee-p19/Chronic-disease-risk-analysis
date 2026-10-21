@@ -34,7 +34,7 @@ The Flask charts are Plotly charts; they are not embedded Tableau views. To embe
 
 ## Project Demo Video
 
-Demo video: Will be added after recording.
+Demo video: https://drive.google.com/file/d/1gXMSVa4OPMnXJDVYjrGPO06wdqyVOHdW/view?usp=drivesdk
 
 ## Technologies Used
 
