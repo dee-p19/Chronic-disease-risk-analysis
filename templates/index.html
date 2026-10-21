@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chronic Disease Risk Analysis</title>
+<style>
+:root{--ink:#172033;--muted:#657087;--bg:#f3f6fb;--card:#fff;--accent:#275dad}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{background:#142744;color:#fff;padding:25px 5vw}header h1{margin:0 0 8px;font-size:clamp(22px,3vw,32px)}header p{margin:0;color:#d7e2f4}
+main{max-width:1250px;margin:24px auto;padding:0 18px}.filter{background:white;padding:14px 18px;border-radius:12px;margin-bottom:18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+select,button{padding:9px 12px;border:1px solid #ccd5e2;border-radius:7px;background:#fff}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px}.kpi{background:var(--card);padding:20px;border-radius:12px;box-shadow:0 2px 10px #1720330a}.kpi span{color:var(--muted);font-size:13px}.kpi strong{display:block;font-size:28px;margin-top:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:16px}.chart{background:white;border-radius:12px;padding:10px;overflow:hidden}
+.note{font-size:13px;color:var(--muted);line-height:1.5;margin:18px 2px}footer{padding:18px;text-align:center;color:var(--muted);font-size:12px}
+</style></head><body>
+<header><h1>Chronic Disease Risk Analysis</h1><p>Interactive synthetic-data dashboard for exploring patient health trends</p></header>
+<main>
+<form class="filter" method="get"><label for="age_group"><b>Filter by age group:</b></label><select id="age_group" name="age_group">
+{% for group in age_groups %}<option value="{{group}}" {% if group==selected %}selected{% endif %}>{{group}}</option>{% endfor %}
+</select><button type="submit">Apply filter</button><a href="/" style="color:#275dad">Reset</a></form>
+<section class="kpis"><div class="kpi"><span>Patients in view</span><strong>{{n}}</strong></div><div class="kpi"><span>Heart disease prevalence</span><strong>{{heart}}%</strong></div><div class="kpi"><span>Diabetes prevalence</span><strong>{{diabetes}}%</strong></div><div class="kpi"><span>Stroke prevalence</span><strong>{{stroke}}%</strong></div></section>
+<section class="grid">{% for chart in charts %}<div class="chart">{{chart|safe}}</div>{% endfor %}</section>
+<p class="note"><b>Important:</b> This demonstration uses entirely synthetic data. Percentages are illustrative, not clinical estimates. This dashboard is not a diagnostic tool and must not be used for real patient-care decisions.</p>
+</main><footer>Chronic Disease Risk Analysis • Tableau + Flask project prototype</footer></body></html>
